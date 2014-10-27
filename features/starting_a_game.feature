@@ -1,7 +1,7 @@
 
 Feature: Starting a game
   In order to play battleships
-  As a nostalgic player
+  As a player
   I want to start a new game
 
   Scenario: Registering
