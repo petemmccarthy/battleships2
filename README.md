@@ -1,4 +1,10 @@
-#BattleShips
+Basic web-app practice with BattleShips game.
+=============================================
+
+Previously used Ruby code being used to deploy to the web using the Sinatra framework.
+
+About the Game
+--------------
 
 The game is ready to play when theres are two players initialized with a board each and each board has 5 ships placed. 
 
