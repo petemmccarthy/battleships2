@@ -2,9 +2,17 @@ require 'sinatra/base'
 
 class Battleships < Sinatra::Base
 
+  require_relative './player'
+  require_relative './game'
+
+  GAME = Game.new
+
   set :views, Proc.new { File.join(root, "..", "views") }
 
+  enable :sessions
+
   get '/' do
+    puts session.inspect
     erb :index
   end
 
