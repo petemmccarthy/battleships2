@@ -6,8 +6,15 @@
 
   </head>
     <body>
+      <!-- <a href="new_game">New Game</a> -->
 
-      <a href="new_game">New Game</a>
-
+    <% if @name %>
+      <h3>Hello <%= @name %></h3>
+    <% end %>
+    
+  <form action="/register" method="post">
+    Name: <input type ="text" name="player_name">
+          <input type ="submit" value="Register">
+        </form>
     </body>
 </html>

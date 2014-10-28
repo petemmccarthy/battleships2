@@ -13,11 +13,13 @@ class Battleships < Sinatra::Base
 
   get '/' do
     puts session.inspect
+    @name = session[:me]
     erb :index
   end
 
-  get '/new_game' do
-    erb :new_game
+  post '/register' do
+    session[:me] = params[:player_name]
+    erb :index
   end
 
   # start the server if ruby file executed directly
