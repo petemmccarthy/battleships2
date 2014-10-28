@@ -19,15 +19,6 @@ class Game
 	end
 end
 
-# game = Game.new
-
-# game.add_player :a_player
-# p game
-
-# game.add_player :another_player
-# p game
-# p game.players
-
 
 
 # 	attr_accessor :player1, :player2

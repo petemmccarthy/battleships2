@@ -18,8 +18,8 @@ class Battleships < Sinatra::Base
   end
 
   post '/register' do
-    name = params[:player_name]
-    player = Player.new(name: name)
+    # name = params[:player_name]
+    player = Player.new(name: params[:player_name])
     session[:me] = params[:player_name]
     puts GAME.inspect
     erb :index
