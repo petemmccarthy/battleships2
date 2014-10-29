@@ -12,13 +12,13 @@ class Battleships < Sinatra::Base
   enable :sessions
 
   get '/' do
-    puts "++++" * 20
-    puts GAME.inspect
+    # puts GAME.inspect
     @name = session[:me]
     erb :index
   end
 
   post '/register' do
+    puts session.inspect
     # name = params[:player_name]
     player = Player.new(name: params[:player_name])
     GAME.add_player player
@@ -29,8 +29,6 @@ class Battleships < Sinatra::Base
   end
 
   get '/new_game' do
-    puts "*****" * 20
-    puts session.inspect
     erb :new_game
   end
 
