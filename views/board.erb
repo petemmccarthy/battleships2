@@ -7,7 +7,7 @@
   
   <body>
 
-    <table width="400" cellpadding="10" cellspacing="5" align="center" border="2" bgcolor="blue">
+<!--     <table width="400" cellpadding="10" cellspacing="5" align="center" border="2" bgcolor="blue">
       <tr>
         <th></th>
         <th>1</th>
@@ -161,6 +161,25 @@
         <td>~</td>
         <td>~</td>
       </tr>
+
+    </table>   -->
+    
+    <table width="400" cellpadding="10" cellspacing="5" align="center" border="2" bgcolor="blue">
+      <thead>Game of BattleShips!</thead>
+      <% (1..10).to_a.unshift(' ').each do |column| %>
+
+        <th><%= column %></th>
+      <% end %>
+      <% @cells.each_with_index do |row, index| %>
+        <tr>
+          <th><%= (index + 65).chr %></th>
+          <% row.each do |cell| %>
+            <td><%= cell %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>  
+
 
     </body>
 
