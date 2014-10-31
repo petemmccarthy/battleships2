@@ -33,12 +33,16 @@ class Battleships < Sinatra::Base
   end
 
   get '/board' do
-    @cells = (1..100).map { |cell| '~' }.each_slice(10).to_a
-    @cells[0][0] = 'S'
-    @cells[1][0] = 'A'
-    @cells[2][0] = 'D'
-    @cells[0][1] = 'O'
-    @cells[0][2] = 'X'
+
+    @cells = create_grid
+    @cells = @cells.values.map{|cell| cell.content}.each_slice(10).to_a
+    
+    # @cells = (1..100).map { |cell| '~' }.each_slice(10).to_a
+    # @cells[0][0] = 'S'
+    # @cells[1][0] = 'A'
+    # @cells[2][0] = 'D'
+    # @cells[0][1] = 'O'
+    # @cells[0][2] = 'X'
     
     erb :board
   end
@@ -46,6 +50,20 @@ class Battleships < Sinatra::Base
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
+
+class Cell
+  def content
+    '~'
+  end
+end
+
+def create_grid
+  grid = {}
+  ("A".."J").to_a.each{|l| (1..10).to_a.each {|n| grid["#{l}#{n}"] = "~" }}
+  grid
+end
+
+
 
 
 
