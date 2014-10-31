@@ -36,6 +36,11 @@ class Battleships < Sinatra::Base
 
     @cells = create_grid
     @cells = @cells.values.map{|cell| cell.content}.each_slice(10).to_a
+    @cells[0][0] = 'Ship!'
+    @cells[1][0] = 'Ship!'
+    @cells[2][0] = 'Ship!'
+    @cells[0][1] = 'Ship!'
+    @cells[0][2] = 'Ship!'
     
     # @cells = (1..100).map { |cell| '~' }.each_slice(10).to_a
     # @cells[0][0] = 'S'
