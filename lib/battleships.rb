@@ -33,6 +33,12 @@ class Battleships < Sinatra::Base
   end
 
   get '/board' do
+    @cells = (1..100).map { |cell| '~' }.each_slice(10).to_a
+    @cells[0][0] = 'S'
+    @cells[1][0] = 'A'
+    @cells[2][0] = 'D'
+    @cells[0][1] = 'O'
+    @cells[0][2] = 'X'
     erb :board
   end
 
