@@ -5,11 +5,10 @@ class Battleships < Sinatra::Base
   require_relative './player'
   require_relative './game'
 
-  GAME = Game.new
-
   set :views, Proc.new { File.join(root, "..", "views") }
-
+  set :public_dir, Proc.new { File.join(root, "..", "public") }
   enable :sessions
+  GAME = Game.new
 
   get '/' do
     # puts GAME.inspect
